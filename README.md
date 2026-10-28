@@ -26,6 +26,20 @@
 - сетка популярных товаров;
 - подвал страницы.
 
+## Практическая работа 10
+
+Тема: «Страница на Bootstrap: компоненты».
+
+Выполнено:
+
+- добавлена единая Bootstrap-навигация;
+- создана страница каталога `catalog.html`;
+- создана страница товара `product.html`;
+- создана страница заявки `order.html`;
+- использованы компоненты `navbar`, `card`, `btn`, `badge`, `alert`, `modal`, `form-control`, `input-group`, `form-check`, `accordion`;
+- добавлен файл `css/custom.css` для минимальных доработок;
+- проект подготовлен к сдаче контрольной работы №2.
+
 ## Используемые технологии
 
 - HTML;
@@ -39,7 +53,11 @@
 ```text
 kr2-bootstrap-shop/
 ├── index.html
+├── catalog.html
+├── order.html
+├── product.html
 ├── css/
 │   └── custom.css
+├── images/
 ├── README.md
 └── .gitignore
