@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная — Bootstrap Shop</title>
+  <title>Главная — TasteMatch</title>
   <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
   rel="stylesheet">
@@ -14,9 +14,9 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12 col-md-8">
-          <h1 class="h3 mb-1">Bootstrap Shop</h1>
-          <p class="mb-0 opacity-75">
-            Учебный интернет-магазин на Bootstrap
+          <h1 class="h3 mb-1 main-text">TasteMatch</h1>
+          <p class="mb-0">
+            Конструктор кулинарных мастер-классов
           </p>
         </div>
 
@@ -28,9 +28,9 @@
       </div>
     </div>
   </header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg bg-secondary">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
+      <a class="navbar-brand" href="index.html">TasteMatch</a>
 
       <button
         class="navbar-toggler"
@@ -46,9 +46,9 @@
 
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
-          <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Выбор программы</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Программа</a></li>
           <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
           <li class="nav-item dropdown">
             <a
@@ -61,7 +61,7 @@
               Дополнительно
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Программы</a></li>
               <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
               <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
             </ul>
@@ -73,55 +73,51 @@
   <main>
     <section class="container my-5">
       <div class="row align-items-center g-4">
-        <div class="col-12 col-lg-6">
-          <h2 class="display-5 fw-bold">
-            Учебный каталог товаров на Bootstrap
+        <div class="col-12 col-lg-7">
+          <h2 class="display-5 fw-bold main-text">
+            Создайте свой идеальный кулинарный вечер
           </h2>
           <p class="lead text-muted">
-            Проект демонстрирует использование Bootstrap-сетки,
-            адаптивных колонок и базовых utility-классов.
+            TasteMatch – интерактивный конструктор мастер-классов. 
+            Выбирайте кухню, сложность и меню под любые цели и ограничения.
           </p>
-          <a class="btn btn-primary btn-lg" href="catalog.html">
-            Перейти в каталог
+          <a class="btn btn-primary btn-lg px-4" href="catalog.html">
+            Собрать программу
           </a>
         </div>
 
-        <div class="col-12 col-lg-6">
-          <div class="p-5 bg-light border rounded text-center">
-            <p class="mb-0 text-muted">
-              Здесь может быть изображение, баннер или промо-блок.
-            </p>
-          </div>
+        <div class="col-12 col-lg-5">
+          <image class="rounded" src="images/main_kithcen_image.png"></image>
         </div>
       </div>
     </section>
     <section class="container my-5">
-      <h2 class="text-center mb-4">Преимущества проекта</h2>
+      <h2 class="text-center mb-4">Преимущества наших программ</h2>
 
       <div class="row g-4">
         <div class="col-12 col-md-4">
           <div class="p-4 border rounded h-100 bg-white">
-            <h3 class="h5">Bootstrap-сетка</h3>
+            <h3 class="h5 main-text">Шеф-повара премиум-класса</h3>
             <p class="mb-0 text-muted">
-              Страница построена на 12-колоночной системе Bootstrap.
+              Учитесь готовить у настоящих мастеров с международным опытом и профессиональными стандартами.
             </p>
           </div>
         </div>
 
         <div class="col-12 col-md-4">
           <div class="p-4 border rounded h-100 bg-white">
-            <h3 class="h5">Адаптивность</h3>
+            <h3 class="h5 main-text">Индивидуальный подход</h3>
             <p class="mb-0 text-muted">
-              Колонки меняют ширину в зависимости от размера экрана.
+              Самостоятельно управляйте меню, выбирайте формат вечера и регулируйте количество участников.
             </p>
           </div>
         </div>
 
         <div class="col-12 col-md-4">
           <div class="p-4 border rounded h-100 bg-white">
-            <h3 class="h5">Готовая база</h3>
+            <h3 class="h5 main-text">Любые диетические ограничения</h3>
             <p class="mb-0 text-muted">
-              Проект подготовлен к добавлению карточек, форм и модальных окон.
+              Легко адаптируем любое блюдо под ваши предпочтения: веганские сеты, без глютена, лактозы или аллергенов.
             </p>
           </div>
         </div>
@@ -129,8 +125,8 @@
     </section>
 
     <section class="container my-5">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Популярные товары</h2>
+      <div class="d-flex justify-content-center align-items-center  mb-4">
+        <h2 class="mb-0 px-4" id="popular">Популярные программы</h2>
         <a class="btn btn-outline-primary" href="catalog.html">
           Все товары
         </a>
@@ -139,13 +135,15 @@
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
           <div class="border rounded h-100 p-4">
-            <span class="badge bg-success mb-3">Новинка</span>
-            <h3 class="h5">Товар 1</h3>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h3 class="h5 main-text">Итальянский вечер</h3>
+              <span class="badge bg-warning text-dark mb-3">Хит</span>
+            </div>
             <p class="text-muted">
-              Краткое описание учебного товара.
+              Секреты приготовления домашней пасты ручной работы и нежного десерта тирамису.
             </p>
-            <p class="fw-bold mb-3">1000 руб.</p>
-            <a class="btn btn-primary" href="product.html">
+            <p class="fw-bold mb-3">5 500 руб. / участник</p>
+            <a class="btn btn-primary px-4" href="product.html">
               Подробнее
             </a>
           </div>
@@ -153,13 +151,14 @@
 
         <div class="col-12 col-md-6 col-lg-4">
           <div class="border rounded h-100 p-4">
-            <span class="badge bg-warning text-dark mb-3">Хит</span>
-            <h3 class="h5">Товар 2</h3>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h3 class="h5 main-text">Искусство суши и роллов</h3>
+            </div>
             <p class="text-muted">
-              Краткое описание учебного товара.
+              Правильная варка риса, секреты нарезки рыбы и техника скручивания популярных роллов.
             </p>
-            <p class="fw-bold mb-3">1500 руб.</p>
-            <a class="btn btn-primary" href="product.html">
+            <p class="fw-bold mb-3">6 200 руб./чел.</p>
+            <a class="btn btn-primary px-4" href="product.html">
               Подробнее
             </a>
           </div>
@@ -167,15 +166,71 @@
 
         <div class="col-12 col-md-6 col-lg-4">
           <div class="border rounded h-100 p-4">
-            <span class="badge bg-danger mb-3">Скидка</span>
-            <h3 class="h5">Товар 3</h3>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h3 class="h5 main-text">Идеальный стейк Рибай</h3>
+              <span class="badge bg-danger mb-3">Скидка</span>
+            </div>
             <p class="text-muted">
-              Краткое описание учебного товара.
+              Степени прожарки мяса, тонкости работы с грилем и приготовление классического соуса демиглас.
             </p>
-            <p class="fw-bold mb-3">2000 руб.</p>
-            <a class="btn btn-primary" href="product.html">
+            <p class="fw-bold mb-3">4 800 руб./чел.</p>
+            <a class="btn btn-primary px-4" href="product.html">
               Подробнее
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="container my-5">
+      <h2 class="h4 mb-3">Частые вопросы</h2>
+
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqOne"
+              aria-expanded="false"
+              aria-controls="faqOne"
+            >
+              Можно ли оформить заявку без регистрации?
+            </button>
+          </h3>
+          <div
+            id="faqOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Да, в учебном проекте заявка оформляется без регистрации.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqTwo"
+              aria-expanded="false"
+              aria-controls="faqTwo"
+            >
+              Где используется Bootstrap?
+            </button>
+          </h3>
+          <div
+            id="faqTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Bootstrap используется для сетки, карточек, форм, навигации, сообщений и модальных окон.
+            </div>
           </div>
         </div>
       </div>
@@ -186,7 +241,7 @@
       <div class="row align-items-center g-3">
         <div class="col-12 col-md-6">
           <p class="mb-0">
-            &copy; 2026 Bootstrap Shop. Учебный проект.
+            &copy; 2026 TasteMath.
           </p>
         </div>
 

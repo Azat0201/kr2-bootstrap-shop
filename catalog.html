@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог — Bootstrap Shop</title>
+  <title>Каталог — TasteMath</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -15,9 +15,9 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12 col-md-8">
-          <h1 class="h3 mb-1">Bootstrap Shop</h1>
-          <p class="mb-0 opacity-75">
-            Учебный интернет-магазин на Bootstrap
+          <h1 class="h3 mb-1 main-text">TasteMatch</h1>
+          <p class="mb-0">
+            Конструктор кулинарных мастер-классов
           </p>
         </div>
 
@@ -29,9 +29,9 @@
       </div>
     </div>
   </header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg bg-secondary">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
+      <a class="navbar-brand" href="index.html">TasteMatch</a>
 
       <button
         class="navbar-toggler"
@@ -48,8 +48,8 @@
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
-          <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+          <li class="nav-item"><a class="nav-link active" href="catalog.html">Выбор программы</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Программа</a></li>
           <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
           <li class="nav-item dropdown">
             <a
@@ -62,7 +62,7 @@
               Дополнительно
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
+              <li><a class="dropdown-item" href="catalog.html">Программы</a></li>
               <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
               <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
             </ul>
@@ -72,13 +72,19 @@
     </div>
   </nav>
 
-  <main class="container my-5">
-    <div class="alert alert-info" role="alert">
-      Выберите товар из каталога. Карточки товаров оформлены с помощью компонента Bootstrap `card`.
+  <main class="container my-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active">Каталог</li>
+      </ol>
+    </nav>
+    <div class="col-4 alert alert-info" role="alert">
+      Выберите программу из предложенных.
     </div>
 
     <div class="d-flex justify-content-between align-items-center mb-4">
-      <h1 class="h2 mb-0">Каталог товаров</h1>
+      <h1 class="h2 mb-0">Каталог программ</h1>
       <a class="btn btn-outline-primary" href="order.html">
         Оставить заявку
       </a>
@@ -88,50 +94,21 @@
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <h2 class="card-title h5">Товар 1</h2>
-              <span class="badge bg-success">Новинка</span>
-            </div>
-
-            <p class="card-text text-muted">
-              Краткое описание учебного товара для каталога.
-            </p>
-
-            <p class="fw-bold fs-5 mt-auto">1000 руб.</p>
-
-            <div class="d-flex gap-2">
-              <a class="btn btn-primary" href="product.html">Подробнее</a>
-              <button
-                class="btn btn-outline-primary"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#orderModal"
-              >
-                Заказать
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <h2 class="card-title h5">Товар 2</h2>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="card-title h5 main-text">Итальянский вечер</h2>
               <span class="badge bg-warning text-dark">Хит</span>
             </div>
 
             <p class="card-text text-muted">
-              Краткое описание второго учебного товара.
+              Секреты приготовления домашней пасты ручной работы и нежного десерта тирамису.
             </p>
 
-            <p class="fw-bold fs-5 mt-auto">1500 руб.</p>
+            <p class="fw-bold fs-5 mt-auto">5 500 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
               <button
-                class="btn btn-outline-primary"
+                class="btn btn-outline-primary px-4"
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#orderModal"
@@ -146,21 +123,220 @@
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <h2 class="card-title h5">Товар 3</h2>
-              <span class="badge bg-danger">Скидка</span>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="card-title h5 main-text">Римская пицца и фокачча</h2>
+              <span class="badge bg-danger text-dark">Скидка</span>
             </div>
 
             <p class="card-text text-muted">
-              Краткое описание третьего учебного товара.
+              Работа с воздушным тестом высокой гидратации, соусами и подбор идеальных начинок.
             </p>
 
-            <p class="fw-bold fs-5 mt-auto">2000 руб.</p>
+            <p class="fw-bold fs-5 mt-auto">4 500 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
               <button
-                class="btn btn-outline-primary"
+                class="btn btn-outline-primary px-4"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="card-title h5 main-text">Средиземноморский ужин</h2>
+            </div>
+
+            <p class="card-text text-muted">
+              Легкие сицилийские закуски, запеченная рыба с травами и правильное ризотто с морепродуктами.
+            </p>
+
+            <p class="fw-bold fs-5 mt-auto">6 300 руб. / участник</p>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary px-4"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="card-title h5 main-text">Легендарный Том Ям</h2>
+              <span class="badge bg-success text-dark">Новинка</span>
+            </div>
+
+            <p class="card-text text-muted">
+              Баланс пяти вкусов в главном тайском супе и приготовление хрустящих спринг-роллов.
+            </p>
+
+            <p class="fw-bold fs-5 mt-auto">6 300 руб. / участник</p>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary px-4"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="card-title h5 main-text">Искусство суши и роллов</h2>
+            </div>
+
+            <p class="card-text text-muted">
+              Правильная варка риса, секреты нарезки рыбы и техника скручивания популярных роллов.
+            </p>
+
+            <p class="fw-bold fs-5 mt-auto">6 200 руб. / участник</p>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary px-4"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="card-title h5 main-text">Вок: лапша и стир-фрай</h2>
+              <span class="badge bg-success text-dark">Новинка</span>
+            </div>
+
+            <p class="card-text text-muted">
+              Динамичное приготовление на огне китайской лапши с курицей и овощами в соусе премиум.
+            </p>
+
+            <p class="fw-bold fs-5 mt-auto">6 300 руб. / участник</p>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary px-4"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="card-title h5 main-text">Идеальный стейк Рибай</h2>
+              <span class="badge bg-danger text-dark">Скидка</span>
+            </div>
+
+            <p class="card-text text-muted">
+              Степени прожарки мяса, тонкости работы с грилем и приготовление классического соуса демиглас.
+            </p>
+
+            <p class="fw-bold fs-5 mt-auto">4 800 руб. / участник</p>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary px-4"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="card-title h5 main-text">Бургеры от шефа</h2>
+            </div>
+
+            <p class="card-text text-muted">
+              Замешивание сочного фарша, выпекание бриошь-булочек и сборка крафтовых бургеров.
+            </p>
+
+            <p class="fw-bold fs-5 mt-auto">4 200 руб. / участник</p>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary px-4"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h2 class="card-title h5 main-text">Веганский гастро-сет</h2>
+            </div>
+
+            <p class="card-text text-muted">
+              Изысканные растительные блюда без продуктов животного происхождения и глютена, полные вкуса.
+            </p>
+
+            <p class="fw-bold fs-5 mt-auto">3 700 руб. / участник</p>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary px-4"
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#orderModal"
@@ -172,7 +348,6 @@
         </div>
       </div>
     </div>
-
     <div
   class="modal fade"
   id="orderModal"
@@ -230,60 +405,6 @@
         </div>
       </div>
     </div>
-
-    <section class="container my-5">
-      <h2 class="h4 mb-3">Частые вопросы</h2>
-
-      <div class="accordion" id="faqAccordion">
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#faqOne"
-              aria-expanded="false"
-              aria-controls="faqOne"
-            >
-              Можно ли оформить заявку без регистрации?
-            </button>
-          </h3>
-          <div
-            id="faqOne"
-            class="accordion-collapse collapse"
-            data-bs-parent="#faqAccordion"
-          >
-            <div class="accordion-body">
-              Да, в учебном проекте заявка оформляется без регистрации.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#faqTwo"
-              aria-expanded="false"
-              aria-controls="faqTwo"
-            >
-              Где используется Bootstrap?
-            </button>
-          </h3>
-          <div
-            id="faqTwo"
-            class="accordion-collapse collapse"
-            data-bs-parent="#faqAccordion"
-          >
-            <div class="accordion-body">
-              Bootstrap используется для сетки, карточек, форм, навигации, сообщений и модальных окон.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
   
   <footer class="bg-dark text-white py-4 mt-5">
@@ -291,7 +412,7 @@
       <div class="row align-items-center g-3">
         <div class="col-12 col-md-6">
           <p class="mb-0">
-            &copy; 2026 Bootstrap Shop. Учебный проект.
+            &copy; 2026 TasteMath.
           </p>
         </div>
 

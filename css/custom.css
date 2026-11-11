@@ -1,5 +1,13 @@
+:root {
+  --primary-color: #e6b000;
+  --primary-border-color: #856600;
+  --secondary-color: #04b521;
+  --text-color: black;
+}
+
 body {
   min-height: 100vh;
+  font-family:'Trebuchet MS', sans-serif;
 }
 
 .placeholder-box {
@@ -15,3 +23,39 @@ body {
   object-fit: cover;
 }
 
+.bg-primary,
+.btn-primary {
+  color: var(--text-color) !important;
+  background-color: var(--primary-color) !important;
+}
+
+.main-text {
+  font-family: 'Courier New', Courier !important;
+  font-weight: 800 !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+.btn-primary {
+  border-color: var(--primary-border-color) !important;
+}
+
+.btn-outline-primary,
+.text-primary {
+  border-color: var(--secondary-color) !important;
+  color: var(--secondary-color) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.dropdown-item:focus,
+.bg-success {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color) !important;
+}
+
+.form-check-input:hover {
+  cursor: pointer;
+}
