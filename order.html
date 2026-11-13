@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Оформление заказа TasteMath</title>
-  <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-  rel="stylesheet">
+  <title>Главная — TasteMatch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
 </head>
+
 <body>
-  <header class="bg-primary text-white py-4">
+  <header class="bg-primary py-4">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12 col-md-8">
-          <h1 class="h3 mb-1 main-text">TasteMatch</h1>
-          <p class="mb-0">
-            Конструктор кулинарных мастер-классов
-          </p>
+          <a href="index.html" class="brand-logo">
+            <span class="brand-logo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
+                <line x1="6" y1="17" x2="18" y2="17" />
+              </svg>
+            </span>
+            <div>
+              <h1 class="h3 mb-0 main-text">TasteMatch</h1>
+              <p class="mb-0 small">Конструктор кулинарных мастер-классов</p>
+            </div>
+          </a>
         </div>
 
+
         <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
-          <span class="badge bg-light text-primary">
+          <span class="badge bg-white text-primary fs-9">
             КР №2
           </span>
         </div>
       </div>
     </div>
   </header>
-  <nav class="navbar navbar-expand-lg bg-secondary">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">TasteMatch</a>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNavbar"
-        aria-controls="mainNavbar"
-        aria-expanded="false"
-        aria-label="Переключить навигацию"
-      >
+  <nav class="navbar navbar-expand-lg bg-secondary sticky-top shadow-sm">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto">
+          <div class="ms-lg-3 mt-2 mt-lg-0">
+            <button id="themeToggle" class="rounded theme-toggle-btn" type="button" title="Переключить тему" aria-label="Переключить тему">
+              <span id="themeIcon">☀️</span>
+            </button>
+          </div>
           <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-          <li class="nav-item"><a class="nav-link" href="catalog.html">Выбор программы</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Программы</a></li>
           <li class="nav-item"><a class="nav-link" href="product.html">Программа</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
           <li class="nav-item"><a class="nav-link active" href="order.html">Заявка</a></li>
           <li class="nav-item dropdown">
-            <a
-              class="nav-link"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              ☰
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Дополнительно
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="catalog.html">Программы</a></li>
               <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
               <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="about.html">О студии</a></li>
+              <li><a class="dropdown-item" href="contacts.html">Как добраться</a></li>
             </ul>
           </li>
         </ul>
@@ -107,8 +116,8 @@
                 <div class="col-12 col-md-6">
                   <label for="order-product" class="form-label">Программа *</label>
                   <select id="order-product" name="product" class="form-select" required>
-                    <option value="" disabled selected>Выберите программу</option>
-                    <option value="italian_evening">Итальянский вечер</option>
+                    <option value="" disabled>Выберите программу</option>
+                    <option value="italian_evening selected">Итальянский вечер</option>
                     <option value="roman_pizza">Римская пицца и фокачча</option>
                     <option value="mediterranean_dinner">Средиземноморский ужин</option>
                     <option value="tom_yum">Легендарный Том Ям</option>
@@ -118,6 +127,16 @@
                     <option value="sheff_burgers">Бургеры от шефа</option>
                     <option value="vegan_set">Веганский гастро-сет</option>
                   </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="order-date" class="form-label">Дата *</label>
+                  <input id="order-date" name="date" type="date" class="form-control">
+                </div>
+                
+                <div class="col-12 col-md-6">
+                  <label for="order-time" class="form-label">Время *</label>
+                  <input id="order-time" name="time" type="time" class="form-control">
                 </div>
 
                 <div class="col-12">
@@ -151,26 +170,70 @@
   </main>
 
 
-  <footer class="bg-dark text-white py-4 mt-5">
+  <footer class="custom-footer pt-5 pb-4 mt-5">
     <div class="container">
-      <div class="row align-items-center g-3">
-        <div class="col-12 col-md-6">
-          <p class="mb-0">
-            &copy; 2026 TasteMath.
+      <div class="row g-4 pb-4 border-bottom border-secondary">
+        <div class="col-12 col-lg-4">
+          <a href="index.html" class="brand-logo mb-3">
+            <span class="brand-logo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
+                <line x1="6" y1="17" x2="18" y2="17" />
+              </svg>
+            </span>
+            <span class="h5 mb-0 main-text">TasteMatch</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            Индивидуальный подход к гастрономическим событиям. Создаём кулинарные мастер-классы, которые запоминаются
+            каждому гостю.
           </p>
         </div>
 
-        <div class="col-12 col-md-6 text-md-end">
-          <a class="text-white text-decoration-none me-3" href="catalog.html">
-            Каталог
-          </a>
-          <a class="text-white text-decoration-none" href="order.html">
-            Заявка
-          </a>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="footer-title">Разделы</div>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer-link" href="index.html">Главная</a></li>
+            <li><a class="footer-link" href="catalog.html">Каталог программ</a></li>
+            <li><a class="footer-link" href="product.html">Программа шефа</a></li>
+            <li><a class="footer-link" href="about.html">О нас</a></li>
+            <li><a class="footer-link" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="footer-title">Контакты</div>
+          <ul class="list-unstyled small text-secondary mb-0">
+            <li class="mb-2"><strong class="d-block main-text">Адрес:</strong> Москва, Малая Филёвская ул., 18</li>
+            <li class="mb-2"><strong class="d-block main-text">Телефон:</strong> +7 (495) 120-22-00</li>
+            <li class="mb-2"><strong class="d-block main-text">Режим работы:</strong> Ежедневно с 10:00 до 22:00</li>
+            <li><strong class="d-block main-text">Email:</strong> hello@tastematch.ru</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="footer-contact-box">
+            <div class="fw-bold mb-1 main-text">TasteMatch — студия</div>
+            <p class="small text-secondary mb-3">
+              Кулинарные вечера, корпоративы и индивидуальные сеты по предварительной записи.
+            </p>
+            <a href="order.html" class="btn btn-primary btn-sm w-100">Оформить заявку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-3 small text-secondary">
+        <p class="mb-2 mb-md-0">&copy; 2026 TasteMatch. Все права защищены.</p>
+        <div>
+          <a class="text-secondary text-decoration-none me-3" href="catalog.html">Каталог</a>
+          <a class="text-secondary text-decoration-none me-3" href="about.html">О нас</a>
+          <a class="text-secondary text-decoration-none" href="contacts.html">Контакты</a>
         </div>
       </div>
     </div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/toggle_theme.js"></script>
 </body>
 </html>
