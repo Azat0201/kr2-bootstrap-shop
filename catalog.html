@@ -30,11 +30,12 @@
           </a>
         </div>
 
-
-        <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
-          <span class="badge bg-white text-primary fs-9">
-            КР №2
-          </span>
+        <div class="col-12 col-md-4">
+          <form id="siteSearchForm" class="d-flex" role="search">
+            <input id="siteSearchInput" class="form-control me-2" type="search"
+              placeholder="Найти мастер-класс (например, том ям, стейк)..." aria-label="Поиск по программам">
+            <button class="btn btn-dark" type="submit">Найти</button>
+          </form>
         </div>
       </div>
     </div>
@@ -42,11 +43,6 @@
 
   <nav class="navbar navbar-expand-lg bg-secondary sticky-top shadow-sm">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-        aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto">
           <div class="ms-lg-3 mt-2 mt-lg-0">
@@ -57,25 +53,7 @@
           </div>
           <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
           <li class="nav-item"><a class="nav-link active" href="catalog.html">Программы</a></li>
-          <li class="nav-item"><a class="nav-link" href="product.html">Программа</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-          <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Дополнительно
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="catalog.html">Программы</a></li>
-              <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
-              <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="about.html">О студии</a></li>
-              <li><a class="dropdown-item" href="contacts.html">Как добраться</a></li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>
@@ -99,43 +77,41 @@
       <div class="sticky-filter-bar card shadow-sm mb-4">
         <div class="card-body py-3">
           <div class="row g-2 align-items-center">
-            <div class="col-12 col-md-5">
-              <input id="catalogSearch" type="search" class="form-control"
-                placeholder="🔍 Поиск по названию или блюду (паста, стейк, роллы...)">
-            </div>
-
-            <div class="col-4 col-md-2">
-              <select id="catalogBadgeFilter" class="form-select">
-                <option value="all">Кухня</option>
-                <option value="Хит">Средиземноморская</option>
-                <option value="Новинка">Паназиатская</option>
-                <option value="Скидка">Мясная</option>
+            <div class="col-12 col-md-4">
+              <select id="filterCuisine" class="form-select" aria-label="Кухня">
+                <option value="all" selected>Кухня (все)</option>
+                <option value="mediterranean">Средиземноморская</option>
+                <option value="panasian">Паназиатская</option>
+                <option value="meat">Мясная</option>
+                <option value="vegan">Веганская</option>
               </select>
             </div>
 
-            <div class="col-4 col-md-2">
-              <select id="catalogBadgeFilter" class="form-select">
-                <option value="all">Все категории</option>
-                <option value="Хит">🔥 Хиты</option>
-                <option value="Новинка">✨ Новинки</option>
-                <option value="Скидка">🏷️ Со скидкой</option>
+            <div class="col-12 col-md-4">
+              <select id="filterCategory" class="form-select" aria-label="Категория">
+                <option value="all" selected>Все категории</option>
+                <option value="hit">🔥 Хиты</option>
+                <option value="new">✨ Новинки</option>
+                <option value="sale">🏷️ Со скидкой</option>
               </select>
             </div>
 
-            <div class="col-4 col-md-2">
-              <select id="catalogPriceFilter" class="form-select">
-                <option value="all">Любой бюджет</option>
+            <div class="col-12 col-md-3">
+              <select id="filterBudget" class="form-select" aria-label="Бюджет">
+                <option value="all" selected>Любой бюджет</option>
                 <option value="5000">До 5 000 руб.</option>
                 <option value="6000">До 6 000 руб.</option>
                 <option value="7000">До 7 000 руб.</option>
               </select>
             </div>
 
-            <div class="col-12 col-md-1 d-grid">
-              <button id="catalogResetBtn" type="button" class="btn border" title="Сбросить фильтры">
-                ✕
-              </button>
+            <div class="col-12 col-md-1">
+              <button id="resetFiltersBtn" type="button" class="btn btn-outline-secondary w-100"
+                title="Сбросить фильтры">✕</button>
             </div>
+          </div>
+          <div id="emptyCatalogMessage" class="alert alert-warning text-center d-none" role="alert">
+            По вашему запросу программ не найдено. Попробуйте сбросить фильтры.
           </div>
         </div>
       </div>
@@ -144,10 +120,11 @@
         По вашему запросу программ не найдено. Попробуйте сбросить фильтры.
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 program-item" data-cuisine="mediterranean" data-category="hit"
+        data-price="5500">
         <div class="card h-100 shadow-sm hover-card">
           <div class="card-body d-flex flex-column">
-            <image class="card-img-top mb-3 rounded" src="images/italian_evening.jpeg"></image>
+            <image class="card-img-top mb-3 rounded" src="images/programms_catalog/italian_evening.jpeg"></image>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <h2 class="card-title h5 main-text">Итальянский вечер</h2>
               <span class="badge bg-warning text-dark">Хит</span>
@@ -160,16 +137,17 @@
             <p class="fw-bold fs-5 mt-auto">5 500 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="programms/italian_evening_page.html">Подробнее</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 program-item" data-cuisine="mediterranean" data-category="sale"
+        data-price="4500">
         <div class="card h-100 shadow-sm hover-card">
           <div class="card-body d-flex flex-column">
-            <image class="card-img-top mb-3 rounded" src="images/roman_pizza.jpeg"></image>
+            <image class="card-img-top mb-3 rounded" src="images/programms_catalog/roman_pizza.jpeg"></image>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <h2 class="card-title h5 main-text">Римская пицца и фокачча</h2>
               <span class="badge bg-danger text-dark">Скидка</span>
@@ -182,16 +160,17 @@
             <p class="fw-bold fs-5 mt-auto">4 500 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="programms/roman_pizza_page.html">Подробнее</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 program-item" data-cuisine="mediterranean" data-category="none"
+        data-price="6300">
         <div class="card h-100 shadow-sm hover-card">
           <div class="card-body d-flex flex-column">
-            <image class="card-img-top mb-3 rounded" src="images/mediterranean_dinner.jpeg"></image>
+            <image class="card-img-top mb-3 rounded" src="images/programms_catalog/mediterranean_dinner.jpeg"></image>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <h2 class="card-title h5 main-text">Средиземноморский ужин</h2>
             </div>
@@ -203,16 +182,16 @@
             <p class="fw-bold fs-5 mt-auto">6 300 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="programms/mediterranean_dinner_page.html">Подробнее</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 program-item" data-cuisine="panasian" data-category="new" data-price="6300">
         <div class="card h-100 shadow-sm hover-card">
           <div class="card-body d-flex flex-column">
-            <image class="card-img-top mb-3 rounded" src="images/tom_yum.jpeg"></image>
+            <image class="card-img-top mb-3 rounded" src="images/programms_catalog/tom_yum.jpeg"></image>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <h2 class="card-title h5 main-text">Легендарный Том Ям</h2>
               <span class="badge bg-success text-dark">Новинка</span>
@@ -225,16 +204,16 @@
             <p class="fw-bold fs-5 mt-auto">6 300 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="programms/tom_yum_page.html">Подробнее</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 program-item" data-cuisine="panasian" data-category="none" data-price="6200">
         <div class="card h-100 shadow-sm hover-card">
           <div class="card-body d-flex flex-column">
-            <image class="card-img-top mb-3 rounded" src="images/sushi.jpeg"></image>
+            <image class="card-img-top mb-3 rounded" src="images/programms_catalog/sushi.jpeg"></image>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <h2 class="card-title h5 main-text">Искусство суши и роллов</h2>
             </div>
@@ -246,16 +225,16 @@
             <p class="fw-bold fs-5 mt-auto">6 200 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="programms/sushi_page.html">Подробнее</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 program-item" data-cuisine="panasian" data-category="new" data-price="6300">
         <div class="card h-100 shadow-sm hover-card">
           <div class="card-body d-flex flex-column">
-            <image class="card-img-top mb-3 rounded" src="images/wok.jpeg"></image>
+            <image class="card-img-top mb-3 rounded" src="images/programms_catalog/wok.jpeg"></image>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <h2 class="card-title h5 main-text">Вок: лапша и стир-фрай</h2>
               <span class="badge bg-success text-dark">Новинка</span>
@@ -268,16 +247,16 @@
             <p class="fw-bold fs-5 mt-auto">6 300 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="programms/wok_page.html">Подробнее</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 program-item" data-cuisine="meat" data-category="sale" data-price="4800">
         <div class="card h-100 shadow-sm hover-card">
           <div class="card-body d-flex flex-column">
-            <image class="card-img-top mb-3 rounded" src="images/steak.jpeg"></image>
+            <image class="card-img-top mb-3 rounded" src="images/programms_catalog/steak.jpeg"></image>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <h2 class="card-title h5 main-text">Идеальный стейк Рибай</h2>
               <span class="badge bg-danger text-dark">Скидка</span>
@@ -290,16 +269,16 @@
             <p class="fw-bold fs-5 mt-auto">4 800 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="programms/steak_page.html">Подробнее</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 program-item" data-cuisine="meat" data-category="none" data-price="4200">
         <div class="card h-100 shadow-sm hover-card">
           <div class="card-body d-flex flex-column">
-            <image class="card-img-top mb-3 rounded" src="images/burgers.jpeg"></image>
+            <image class="card-img-top mb-3 rounded" src="images/programms_catalog/burgers.jpeg"></image>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <h2 class="card-title h5 main-text">Бургеры от шефа</h2>
             </div>
@@ -311,16 +290,16 @@
             <p class="fw-bold fs-5 mt-auto">4 200 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="programms/burgers_page.html">Подробнее</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 program-item" data-cuisine="vegan" data-category="none" data-price="3700">
         <div class="card h-100 shadow-sm hover-card">
           <div class="card-body d-flex flex-column">
-            <image class="card-img-top mb-3 rounded" src="images/vegan_set.jpeg"></image>
+            <image class="card-img-top mb-3 rounded" src="images/programms_catalog/vegan_set.jpeg"></image>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <h2 class="card-title h5 main-text">Веганский гастро-сет</h2>
             </div>
@@ -332,7 +311,7 @@
             <p class="fw-bold fs-5 mt-auto">3 700 руб. / участник</p>
 
             <div class="d-flex gap-2">
-              <a class="btn btn-primary px-4" href="product.html">Подробнее</a>
+              <a class="btn btn-primary px-4" href="programms/vegan_set_page.html">Подробнее</a>
             </div>
           </div>
         </div>
@@ -365,20 +344,43 @@
           <ul class="list-unstyled mb-0">
             <li><a class="footer-link" href="index.html">Главная</a></li>
             <li><a class="footer-link" href="catalog.html">Каталог программ</a></li>
-            <li><a class="footer-link" href="product.html">Программа шефа</a></li>
             <li><a class="footer-link" href="about.html">О нас</a></li>
-            <li><a class="footer-link" href="contacts.html">Контакты</a></li>
           </ul>
         </div>
 
         <div class="col-6 col-md-4 col-lg-3">
           <div class="footer-title">Контакты</div>
-          <ul class="list-unstyled small text-secondary mb-0">
-            <li class="mb-2"><strong class="d-block main-text">Адрес:</strong> Москва, Малая Филёвская ул., 18</li>
-            <li class="mb-2"><strong class="d-block main-text">Телефон:</strong> +7 (495) 120-22-00</li>
-            <li class="mb-2"><strong class="d-block main-text">Режим работы:</strong> Ежедневно с 10:00 до 22:00</li>
-            <li><strong class="d-block main-text">Email:</strong> hello@tastematch.ru</li>
+          <ul class="list-unstyled small text-secondary mb-3">
+            <li class="mb-2"><strong class="main-text d-block">Адрес:</strong> Москва, Малая Филёвская ул., 18</li>
+            <li class="mb-2"><strong class="main-text d-block">Телефон:</strong> +7 (495) 120-22-00</li>
+            <li class="mb-2"><strong class="main-text d-block">Режим работы:</strong> Ежедневно с 10:00 до 22:00</li>
+            <li class="d-flex align-items-center gap-2 mt-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e6b000" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <a href="mailto:hello@tastematch.ru" class="text-decoration-none">hello@tastematch.ru</a>
+            </li>
           </ul>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://vk.com" target="_blank" rel="noopener" class="social-footer-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#e6b000">
+                <path
+                  d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974h-3.255c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.708 7.376 2.708z" />
+              </svg>
+              <span class="text-black">ВКонтакте</span>
+            </a>
+
+            <a href="https://t.me" target="_blank" rel="noopener" class="social-footer-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#e6b000">
+                <path
+                  d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+              </svg>
+              <span class="text-black">Telegram</span>
+            </a>
+          </div>
         </div>
 
         <div class="col-12 col-md-4 col-lg-3">
@@ -394,11 +396,6 @@
 
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-3 small text-secondary">
         <p class="mb-2 mb-md-0">&copy; 2026 TasteMatch. Все права защищены.</p>
-        <div>
-          <a class="text-secondary text-decoration-none me-3" href="catalog.html">Каталог</a>
-          <a class="text-secondary text-decoration-none me-3" href="about.html">О нас</a>
-          <a class="text-secondary text-decoration-none" href="contacts.html">Контакты</a>
-        </div>
       </div>
     </div>
   </footer>
@@ -406,6 +403,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/toggle_theme.js"></script>
   <script src="js/filter.js"></script>
+  <script src="js/search.js"></script>
 </body>
 
 </html>
