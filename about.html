@@ -30,11 +30,12 @@
           </a>
         </div>
 
-
-        <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
-          <span class="badge bg-white text-primary fs-9">
-            КР №2
-          </span>
+        <div class="col-12 col-md-4">
+          <form id="siteSearchForm" class="d-flex" role="search">
+            <input id="siteSearchInput" class="form-control me-2" type="search"
+              placeholder="Найти мастер-класс (например, том ям, стейк)..." aria-label="Поиск по программам">
+            <button class="btn btn-dark" type="submit">Найти</button>
+          </form>
         </div>
       </div>
     </div>
@@ -42,11 +43,6 @@
 
   <nav class="navbar navbar-expand-lg bg-secondary sticky-top shadow-sm">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-        aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto">
           <div class="ms-lg-3 mt-2 mt-lg-0">
@@ -57,25 +53,7 @@
           </div>
           <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
           <li class="nav-item"><a class="nav-link" href="catalog.html">Программы</a></li>
-          <li class="nav-item"><a class="nav-link" href="product.html">Программа</a></li>
           <li class="nav-item"><a class="nav-link active" href="about.html">О нас</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-          <li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Дополнительно
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="catalog.html">Программы</a></li>
-              <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
-              <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="about.html">О студии</a></li>
-              <li><a class="dropdown-item" href="contacts.html">Как добраться</a></li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>
@@ -119,25 +97,25 @@
       <div class="row g-4 text-center">
         <div class="col-6 col-md-3">
           <div class="p-4 border rounded bg-white hover-card shadow-sm h-100">
-            <div class="display-6 fw-bold main-text">1 500+</div>
+            <div class="display-6 fw-bold main-text counter" data-target="1500" data-suffix="+">0+</div>
             <p class="text-muted mb-0">проведённых мастер-классов</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="p-4 border rounded bg-white hover-card shadow-sm h-100">
-            <div class="display-6 fw-bold main-text">12</div>
+            <div class="display-6 fw-bold main-text counter" data-target="12">0</div>
             <p class="text-muted mb-0">шеф-поваров в команде</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="p-4 border rounded bg-white hover-card shadow-sm h-100">
-            <div class="display-6 fw-bold main-text">9</div>
+            <div class="display-6 fw-bold main-text counter" data-target="9">0</div>
             <p class="text-muted mb-0">кухонь мира в каталоге</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="p-4 border rounded bg-white hover-card shadow-sm h-100">
-            <div class="display-6 fw-bold main-text">4.9 / 5</div>
+            <div class="display-6 fw-bold main-text counter" data-target="4.9" data-suffix=" / 5.0">0 / 5.0</div>
             <p class="text-muted mb-0">средняя оценка гостей</p>
           </div>
         </div>
@@ -194,6 +172,58 @@
         </div>
       </div>
     </section>
+
+    <h1 class="h2 main-text text-center mb-4">Как нас найти</h1>
+    <div class="row g-4 mb-5">
+      <div class="col-12 col-lg-5">
+        <div class="card h-100 shadow-sm hover-card">
+          <div class="card-body p-4 d-flex flex-column justify-content-between">
+            <div>
+              <h2 class="h5 main-text mb-3">Кулинарная студия TasteMatch</h2>
+              <p class="text-muted">
+                Проводим открытые мастер-классы, закрытые гастрономические ужины и тимбилдинги.
+              </p>
+              <hr>
+              <div class="mb-3">
+                <strong class="d-block">Адрес студии:</strong>
+                <span class="text-muted">Москва, Малая Филёвская улица, 18 (м. Пионерская)</span>
+              </div>
+              <div class="mb-3">
+                <strong class="d-block">Телефон:</strong>
+                <a href="tel:+74951202200" class="text-decoration-none text-muted">+7 (495) 120-22-00</a>
+              </div>
+              <div class="mb-3">
+                <strong class="d-block">Режим работы:</strong>
+                <span class="text-muted">Ежедневно с 10:00 до 22:00</span>
+              </div>
+              <div class="mb-3">
+                <strong class="d-block">Электронная почта:</strong>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e6b000" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <a href="mailto:hello@tastematch.ru" class="text-decoration-none text-mutd">hello@tastematch.ru</a>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 mt-3">
+              <a href="order.html" class="btn btn-primary px-4">Записаться</a>
+              <a href="https://yandex.ru/maps" target="_blank" rel="noopener"
+                class="btn btn-outline-primary px-4">Построить маршрут</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-7">
+        <div class="card h-100 shadow-sm overflow-hidden">
+          <iframe title="Карта проезда TasteMatch"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=37.4450%2C55.7330%2C37.4650%2C55.7430&amp;layer=mapnik"
+            style="border:0; min-height: 360px; width: 100%; height: 100%;" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="custom-footer pt-5 pb-4 mt-5">
@@ -221,20 +251,43 @@
           <ul class="list-unstyled mb-0">
             <li><a class="footer-link" href="index.html">Главная</a></li>
             <li><a class="footer-link" href="catalog.html">Каталог программ</a></li>
-            <li><a class="footer-link" href="product.html">Программа шефа</a></li>
             <li><a class="footer-link" href="about.html">О нас</a></li>
-            <li><a class="footer-link" href="contacts.html">Контакты</a></li>
           </ul>
         </div>
 
         <div class="col-6 col-md-4 col-lg-3">
           <div class="footer-title">Контакты</div>
-          <ul class="list-unstyled small text-secondary mb-0">
-            <li class="mb-2"><strong class="d-block main-text">Адрес:</strong> Москва, Малая Филёвская ул., 18</li>
-            <li class="mb-2"><strong class="d-block main-text">Телефон:</strong> +7 (495) 120-22-00</li>
-            <li class="mb-2"><strong class="d-block main-text">Режим работы:</strong> Ежедневно с 10:00 до 22:00</li>
-            <li><strong class="d-block main-text">Email:</strong> hello@tastematch.ru</li>
+          <ul class="list-unstyled small text-secondary mb-3">
+            <li class="mb-2"><strong class="main-text d-block">Адрес:</strong> Москва, Малая Филёвская ул., 18</li>
+            <li class="mb-2"><strong class="main-text d-block">Телефон:</strong> +7 (495) 120-22-00</li>
+            <li class="mb-2"><strong class="main-text d-block">Режим работы:</strong> Ежедневно с 10:00 до 22:00</li>
+            <li class="d-flex align-items-center gap-2 mt-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e6b000" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <a href="mailto:hello@tastematch.ru" class="text-decoration-none">hello@tastematch.ru</a>
+            </li>
           </ul>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://vk.com" target="_blank" rel="noopener" class="social-footer-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#e6b000">
+                <path
+                  d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974h-3.255c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.708 7.376 2.708z" />
+              </svg>
+              <span class="text-black">ВКонтакте</span>
+            </a>
+
+            <a href="https://t.me" target="_blank" rel="noopener" class="social-footer-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#e6b000">
+                <path
+                  d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+              </svg>
+              <span class="text-black">Telegram</span>
+            </a>
+          </div>
         </div>
 
         <div class="col-12 col-md-4 col-lg-3">
@@ -250,17 +303,14 @@
 
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-3 small text-secondary">
         <p class="mb-2 mb-md-0">&copy; 2026 TasteMatch. Все права защищены.</p>
-        <div>
-          <a class="text-secondary text-decoration-none me-3" href="catalog.html">Каталог</a>
-          <a class="text-secondary text-decoration-none me-3" href="about.html">О нас</a>
-          <a class="text-secondary text-decoration-none" href="contacts.html">Контакты</a>
-        </div>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/toggle_theme.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/search.js"></script>
 </body>
 
 </html>
